@@ -21,19 +21,120 @@ img {
 body {
     font-family: 'Red Hat Display', sans-serif;
     background-color: var(--pale-blue);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--desaturated-blue);
 }
 
 button {
     font-family: inherit;
 }
 
+.bgImage {
+    background: url("./images/pattern-background-mobile.svg") no-repeat center/cover;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
 .container {
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    box-shadow: 3px 3px 3px hsl(228, 45%, 44%, 0.15);
+}
+
+.container img.hero {
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.container .pricing {
+    margin: 30px auto;
+    background-color: var(--very-pale-blue);
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.container .pricing article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .pricing article img {
+    margin-right: 10px;
+}
+
+.container .buttons {
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     justify-content: center;
-    height: 500px;
-    width: 100%;
+}
+
+.container h1 {
+    color: hsl(223, 47%, 23%);
+    margin: 10px 0;
+}
+
+.container p.description {
+    padding: 0 30px;
+}
+
+.btn {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnChange {
+    background-color: transparent;
+    color: var(--bright-blue);
+    text-decoration: underline;
+}
+
+.btnPrimary {
+    background-color: var(--bright-blue);
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btnPrimary:hover,
+.btnChange:hover {
+    opacity: 0.8;
+}
+
+.btnSecondary {
+    background-color: transparent;
+    color: var(--desaturated-blue);
+}
+
+.btnSecondary:hover {
+    color: hsl(223, 47%, 23%);
 }
 
 .attribution {
@@ -41,4 +142,15 @@ button {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+    .bgImage {
+        background: url("./images/pattern-background-desktop.svg") no-repeat center/cover;
+        height: 50vh;
+    }
+
+    .container {
+        width: 500px;
+    }
 }
